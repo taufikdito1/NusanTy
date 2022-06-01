@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">NusanTy_CapstoneProject</string>
+    <string name="login">LOGIN</string>
+    <string name="image_logo">image_logo</string>
+
+    <string name="invalid_email">Invalid Email</string>
+    <string name="invalid_username">Username invalid</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="Akun">Belum punya akun?</string>
+    <string name="register_disini"><u>register disini</u> </string>
+    <string name="register">REGISTER</string>
+    <string name="login_text">Login to your account</string>
+    <string name="username">Username</string>
+    <string name="punya_akun">Sudah punya akun?</string>
+    <string name="login_disini"><u>Login disini</u></string>
+    <string name="home">Home</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="tittle_camera">Camera</string>
+    <string name="tittle_akun">Akun</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="logout">logout</string>
+</resources>
