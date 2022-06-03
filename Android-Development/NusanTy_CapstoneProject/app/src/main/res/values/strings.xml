@@ -2,7 +2,8 @@
     <string name="app_name">NusanTy_CapstoneProject</string>
     <string name="login">LOGIN</string>
     <string name="image_logo">image_logo</string>
-
+    <string name="dtDescription">Deskripsi</string>
+    <string name="dtDetail">ini contoh sebuah detail artikel dari image</string>
     <string name="invalid_email">Invalid Email</string>
     <string name="invalid_username">Username invalid</string>
     <string name="invalid_password">Password must be >5 characters</string>

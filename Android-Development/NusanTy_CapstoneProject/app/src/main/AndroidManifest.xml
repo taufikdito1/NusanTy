@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NusanTy_CapstoneProject">
         <activity
+            android:name=".ui.activity.detail.DetailArticleActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.main.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main" />
+
         <activity
             android:name=".ui.activity.splashscreen.SplashScreenActivity"
             android:exported="true">

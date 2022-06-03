@@ -1,5 +1,6 @@
 package com.example.nusanty_capstoneproject.ui.activity.main.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.nusanty_capstoneproject.databinding.FragmentHomeBinding
+import com.example.nusanty_capstoneproject.ui.activity.detail.DetailArticleActivity
 
 class HomeFragment : Fragment() {
 
@@ -30,6 +32,12 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        binding.button.setOnClickListener {
+            val intent = Intent(getActivity(), DetailArticleActivity::class.java)
+            startActivity(intent)
+        }
+
         return root
     }
 
