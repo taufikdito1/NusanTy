@@ -32,7 +32,14 @@ class DetailArticleActivity : AppCompatActivity() {
         viewPagerAdapter = ViewPagerAdapter(this,imageList)
         viewPager.adapter = viewPagerAdapter
 
-        detailArticleViewModel.text.observe(this){
+        detailArticleViewModel.article.observe(this){
+            binding.tvArticleName.text = it
+        }
+        detailArticleViewModel.location.observe(this){
+            binding.tvLocation.text = it
+        }
+
+        detailArticleViewModel.description.observe(this){
             binding.tvDetailArticle.text = it
         }
 
