@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class CameraViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is Camera Fragment"
+        value = "This is Camera Fragment test"
     }
     val text: LiveData<String> = _text
 }
