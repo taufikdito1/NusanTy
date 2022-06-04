@@ -24,7 +24,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            buildConfigField("String", "BASE_URL", '"https://story-api.dicoding.dev/v1/"')
+            buildConfigField("String", "BASE_URL", '"http://34.168.136.93:8080/"')
+            buildConfigField("String", "API_KEY", '"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.xmkUK_GYfENkOYqZa1NnNTy5IwTX9bS0hPFEYYR7jlo"')
         }
     }
 
