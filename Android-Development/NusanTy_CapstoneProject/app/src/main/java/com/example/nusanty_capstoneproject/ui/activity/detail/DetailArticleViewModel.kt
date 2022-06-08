@@ -24,5 +24,7 @@ class DetailArticleViewModel : ViewModel() {
     val article: LiveData<String> = _article
 
 
+
+
 }
 

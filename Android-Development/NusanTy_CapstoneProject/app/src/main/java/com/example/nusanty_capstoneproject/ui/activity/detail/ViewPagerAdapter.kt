@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.viewpager.widget.PagerAdapter
+import com.bumptech.glide.Glide
 import com.example.nusanty_capstoneproject.R
 import java.util.*
 
-class ViewPagerAdapter(val context: Context, val imageList: List<Int>) : PagerAdapter() {
+class ViewPagerAdapter(val context: Context, val imageList: List<String>) : PagerAdapter() {
     // on below line we are creating a method
     // as get count to return the size of the list.
     override fun getCount(): Int {
@@ -40,7 +41,8 @@ class ViewPagerAdapter(val context: Context, val imageList: List<Int>) : PagerAd
 
         // on below line we are setting
         // image resource for image view.
-        imageView.setImageResource(imageList.get(position))
+        Glide.with(context).load(imageList[position]).
+        placeholder(R.drawable.ic_baseline_image_24).error(R.drawable.ic_baseline_broken_image_24).into(imageView)
 
         // on the below line we are adding this
         // item view to the container.

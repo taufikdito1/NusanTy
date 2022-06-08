@@ -2,19 +2,23 @@ package com.example.nusanty_capstoneproject.ui.activity.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.example.nusanty_capstoneproject.R
+import com.example.nusanty_capstoneproject.data.model.article.DetailArticle
 import com.example.nusanty_capstoneproject.databinding.ActivityDetailArticleBinding
 
 class DetailArticleActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDetailArticleBinding
     private lateinit var viewPager: ViewPager
     private lateinit var viewPagerAdapter: ViewPagerAdapter
-    private lateinit var imageList: List<Int>
+    private lateinit var imageList: List<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val data = intent.getParcelableExtra<DetailArticle>(DETAIL_ARTICLE) as DetailArticle
 
         binding = ActivityDetailArticleBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -22,26 +26,21 @@ class DetailArticleActivity : AppCompatActivity() {
         val detailArticleViewModel =
             ViewModelProvider(this)[DetailArticleViewModel::class.java]
 
-        imageList = ArrayList<Int>()
-        imageList = imageList + R.drawable.user1
-        imageList = imageList + R.drawable.user2
-        imageList = imageList + R.drawable.user3
-        imageList = imageList + R.drawable.user4
-        imageList = imageList + R.drawable.user5
+        imageList = ArrayList<String>()
+        imageList = imageList + data.article_imgUrl!!
 
         viewPagerAdapter = ViewPagerAdapter(this,imageList)
         viewPager.adapter = viewPagerAdapter
 
-        detailArticleViewModel.article.observe(this){
-            binding.tvArticleName.text = it
-        }
-        detailArticleViewModel.location.observe(this){
-            binding.tvLocation.text = it
-        }
+            binding.tvArticleName.text = data.article_title
 
-        detailArticleViewModel.description.observe(this){
-            binding.tvDetailArticle.text = it
-        }
+            binding.tvLocation.text = data.article_Location
 
+            binding.tvDetailArticle.text = data.article_Description
+
+    }
+
+    companion object {
+        const val DETAIL_ARTICLE = "DETAIL ARTICLE INI DAN ITU"
     }
 }

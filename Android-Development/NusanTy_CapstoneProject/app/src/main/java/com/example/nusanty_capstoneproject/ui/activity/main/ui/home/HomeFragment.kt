@@ -7,14 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nusanty_capstoneproject.R
+import com.example.nusanty_capstoneproject.data.model.article.DetailArticle
 import com.example.nusanty_capstoneproject.databinding.FragmentHomeBinding
 import com.example.nusanty_capstoneproject.ui.activity.detail.DetailArticleActivity
+import com.example.nusanty_capstoneproject.ui.activity.detail.DetailArticleViewModel
 import java.io.*
 
 class HomeFragment : Fragment() {
@@ -54,12 +57,21 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-        Log.e("json",jsonString)
 
         binding.rvList.apply {
             layoutManager = GridLayoutManager(activity,2)
-            adapter = ArticleAdapter(jsonString)
+            val detail = ArticleAdapter(jsonString)
+            adapter = detail
+            detail.setOnItemClickCallback(object : ArticleAdapter.OnItemClickCallback{
+                override fun onItemClicked(data: DetailArticle) {
+                    Toast.makeText(activity,data.article_title,Toast.LENGTH_SHORT).show()
+                    val intent = Intent(getActivity(), DetailArticleActivity::class.java)
+                    intent.putExtra(DetailArticleActivity.DETAIL_ARTICLE, data)
+                    startActivity(intent)
+                }
+            })
         }
+
 
         return root
     }
