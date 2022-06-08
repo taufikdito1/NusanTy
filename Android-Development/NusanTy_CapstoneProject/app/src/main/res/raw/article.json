@@ -3,32 +3,32 @@
   "message": "Stories fetched successfully",
   "detailArticle": [{
     "article_title" : "Pakaian adat Kebaya",
-    "article_imgUrl" : "https://images.unsplash.com/photo-1541314053190-1db8c88dc05a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "article_imgUrl" : ["https://images.unsplash.com/photo-1557363763-8381968f8353?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1622277430358-f4d134452e2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=647&q=80","https://images.unsplash.com/photo-1580151134699-e0cfbeb763d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
     "article_Description" : "Kebaya has become a Southeast Asian fashion icon, with many Southeast Asian flag carrier airlines including Singapore Airlines, Malaysia Airlines, Royal Brunei Airlines and Garuda Indonesia have adopted the traditional clothing as the uniforms for their female flight attendants.",
     "article_Location" : "Jawa tengah"
   },{
     "article_title" : "Batik",
-    "article_imgUrl" : "https://images.unsplash.com/photo-1595064585513-7859763664bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80",
+    "article_imgUrl" : ["https://images.unsplash.com/photo-1595064585513-7859763664bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80","https://images.unsplash.com/photo-1630929436231-91f4c6fe4884?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1640253295833-fe11b86fd37e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
     "article_Description" : "In Subsaharan Africa, Javanese batik was introduced in the 19th century by Dutch and English traders. The local people there adapted the Javanese batik, making larger motifs with thicker lines and more colours. In the 1970s, batik was introduced to Australia, where aboriginal artists at Erna Bella have developed it as their own craft.",
     "article_Location" : "Jawa Tengah"
   },{
     "article_title" : "Pakaian adat Kebaya",
-    "article_imgUrl" : "https://images.unsplash.com/photo-1541314053190-1db8c88dc05a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "article_imgUrl" : ["https://images.unsplash.com/photo-1557363763-8381968f8353?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1622277430358-f4d134452e2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=647&q=80","https://images.unsplash.com/photo-1580151134699-e0cfbeb763d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
     "article_Description" : "Kebaya has become a Southeast Asian fashion icon, with many Southeast Asian flag carrier airlines including Singapore Airlines, Malaysia Airlines, Royal Brunei Airlines and Garuda Indonesia have adopted the traditional clothing as the uniforms for their female flight attendants.",
     "article_Location" : "Jawa tengah"
   },{
     "article_title" : "Batik",
-    "article_imgUrl" : "https://images.unsplash.com/photo-1595064585513-7859763664bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80",
+    "article_imgUrl" : ["https://images.unsplash.com/photo-1595064585513-7859763664bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80","https://images.unsplash.com/photo-1630929436231-91f4c6fe4884?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1640253295833-fe11b86fd37e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
     "article_Description" : "In Subsaharan Africa, Javanese batik was introduced in the 19th century by Dutch and English traders. The local people there adapted the Javanese batik, making larger motifs with thicker lines and more colours. In the 1970s, batik was introduced to Australia, where aboriginal artists at Erna Bella have developed it as their own craft.",
     "article_Location" : "Jawa Tengah"
   },{
     "article_title" : "Pakaian adat Kebaya",
-    "article_imgUrl" : "https://images.unsplash.com/photo-1541314053190-1db8c88dc05a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "article_imgUrl" : ["https://images.unsplash.com/photo-1557363763-8381968f8353?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1622277430358-f4d134452e2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=647&q=80","https://images.unsplash.com/photo-1580151134699-e0cfbeb763d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
     "article_Description" : "Kebaya has become a Southeast Asian fashion icon, with many Southeast Asian flag carrier airlines including Singapore Airlines, Malaysia Airlines, Royal Brunei Airlines and Garuda Indonesia have adopted the traditional clothing as the uniforms for their female flight attendants.",
     "article_Location" : "Jawa tengah"
   },{
     "article_title" : "Batik",
-    "article_imgUrl" : "https://images.unsplash.com/photo-1595064585513-7859763664bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80",
+    "article_imgUrl" : ["https://images.unsplash.com/photo-1595064585513-7859763664bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80","https://images.unsplash.com/photo-1630929436231-91f4c6fe4884?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1640253295833-fe11b86fd37e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
     "article_Description" : "In Subsaharan Africa, Javanese batik was introduced in the 19th century by Dutch and English traders. The local people there adapted the Javanese batik, making larger motifs with thicker lines and more colours. In the 1970s, batik was introduced to Australia, where aboriginal artists at Erna Bella have developed it as their own craft.",
     "article_Location" : "Jawa Tengah"
   }
