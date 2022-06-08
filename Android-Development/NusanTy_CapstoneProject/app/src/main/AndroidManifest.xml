@@ -13,6 +13,7 @@
         android:theme="@style/Theme.NusanTy_CapstoneProject">
         <activity
             android:name=".ui.activity.detail.DetailArticleActivity"
+            android:label=""
             android:exported="false" />
         <activity
             android:name=".ui.activity.main.MainActivity"
