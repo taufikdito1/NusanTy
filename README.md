@@ -1,4 +1,4 @@
-# NusanTy
+# C22-PS250 - Capstone Project (NusanTy)
 
 ![img_logo](https://user-images.githubusercontent.com/58695619/172529064-10a66a55-3f8f-49c4-832b-ac5c6f7ee126.png)
 
