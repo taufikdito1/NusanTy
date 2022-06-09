@@ -7,8 +7,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class DetailArticle(
-    @field:SerializedName("article_ID")
-    val article_ID: String? = null,
     @field:SerializedName("article_title")
     val article_title : String? = null,
     @field:SerializedName("article_imgUrl")

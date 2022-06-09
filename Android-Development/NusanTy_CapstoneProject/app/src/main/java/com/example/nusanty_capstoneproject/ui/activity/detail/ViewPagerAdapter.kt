@@ -14,9 +14,8 @@ import java.util.*
 class ViewPagerAdapter(val context: Context, val imageList: List<String>) : PagerAdapter() {
     // on below line we are creating a method
     // as get count to return the size of the list.
-    override fun getCount(): Int {
-        return imageList.size
-    }
+    override fun getCount(): Int = imageList.size
+
 
     // on below line we are returning the object
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
