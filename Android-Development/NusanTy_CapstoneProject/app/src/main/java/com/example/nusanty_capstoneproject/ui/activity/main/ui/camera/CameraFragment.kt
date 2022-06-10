@@ -20,8 +20,13 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.Fragment
 import com.example.nusanty_capstoneproject.databinding.FragmentCameraBinding
+import com.example.nusanty_capstoneproject.ml.Detect1
+import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.image.TensorImage
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -38,6 +43,7 @@ class CameraFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         getPermission()
         _binding = FragmentCameraBinding.inflate(inflater, container, false)
 
@@ -49,6 +55,34 @@ class CameraFragment : Fragment() {
             cameraStart()
         }
 
+        binding.btnScan.setOnClickListener {
+            val model = Detect1.newInstance(requireContext())
+            val hasil =  requireActivity().application.assets.open("labels.txt").bufferedReader().use { it.readText() }.split("\n")
+            Log.e("hasil", hasil.toString())
+
+            var bitmap = binding.imgScanImage.getDrawable().toBitmap()
+            bitmap = Bitmap.createScaledBitmap(bitmap, 320, 320, true)
+
+            val tensorImage = TensorImage(DataType.FLOAT32)
+            tensorImage.load(bitmap)
+            val byteBuffer = tensorImage.buffer
+
+            val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 320, 320, 3), DataType.FLOAT32)
+            inputFeature0.loadBuffer(byteBuffer)
+
+            // Runs model inference and gets result.
+            val outputs = model.process(inputFeature0)
+            val outputFeature0 = outputs.outputFeature0AsTensorBuffer //ini deteksi baris 1
+            val outputFeature1 = outputs.outputFeature1AsTensorBuffer //ini deteksi baris terakhir
+            val outputFeature2 = outputs.outputFeature2AsTensorBuffer //gabisa nyimpulin
+            val outputFeature3 = outputs.outputFeature3AsTensorBuffer //deteksi warna udh jalan
+            Log.e("feature", outputFeature0.toString())
+            val max = getMax(outputFeature3.floatArray)
+            Log.e("max",max.toString())
+            binding.btnScan.setText(hasil[max])
+            model.close()
+        }
+
         return binding.root
     }
 
@@ -56,6 +90,24 @@ class CameraFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    private fun getMax(arr:FloatArray) : Int{
+        var ind = 0;
+        var min = 0.0f;
+        val line = requireActivity().application.assets.open("labels.txt").bufferedReader().readLines().size
+        Log.e("lines", line.toString())
+
+        for(i in 0..line)
+        {
+            if(arr[i] > min)
+            {
+                min = arr[i]
+                ind = i;
+            }
+        }
+        return ind
+    }
+
 
     private fun checkPermission(permission: String): Boolean {
         return ContextCompat.checkSelfPermission(
