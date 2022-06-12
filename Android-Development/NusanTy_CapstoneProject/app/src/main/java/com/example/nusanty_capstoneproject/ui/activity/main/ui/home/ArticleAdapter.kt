@@ -1,7 +1,9 @@
 package com.example.nusanty_capstoneproject.ui.activity.main.ui.home
 
+import android.app.Application
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nusanty_capstoneproject.R
@@ -10,10 +12,7 @@ import com.example.nusanty_capstoneproject.data.model.article.DetailResponse
 import com.example.nusanty_capstoneproject.databinding.DetailListItemBinding
 import com.google.gson.Gson
 
-class ArticleAdapter(private val a : String): RecyclerView.Adapter<ArticleAdapter.ListViewHolder>() {
-
-    var gson = Gson()
-    var list = gson.fromJson(a,DetailResponse::class.java)
+class ArticleAdapter(private val list : List<DetailArticle>): RecyclerView.Adapter<ArticleAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(
         viewGroup: ViewGroup,
@@ -24,8 +23,10 @@ class ArticleAdapter(private val a : String): RecyclerView.Adapter<ArticleAdapte
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val article = list.detailArticle[position]
-        Glide.with(holder.bind.root).load(article.article_imgUrl?.get(0)).placeholder(R.drawable.ic_baseline_image_24).error(
+
+        val article = list[position]
+        val img = article.article_imgUrl?.toList()
+        Glide.with(holder.bind.root).load(img?.get(0)).placeholder(R.drawable.ic_baseline_image_24).error(
             R.drawable.ic_baseline_broken_image_24).into(holder.bind.imgItemImage)
         holder.bind.tvItemTitle.text = article.article_title
         holder.bind.tvItemLocation.text =  article.article_Location
@@ -35,7 +36,7 @@ class ArticleAdapter(private val a : String): RecyclerView.Adapter<ArticleAdapte
         }
     }
 
-    override fun getItemCount(): Int = list.detailArticle.size
+    override fun getItemCount(): Int = list.size
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 

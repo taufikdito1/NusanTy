@@ -1,5 +1,6 @@
 package com.example.nusanty_capstoneproject.ui.activity.detail
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import androidx.viewpager.widget.ViewPager
 import com.example.nusanty_capstoneproject.R
 import com.example.nusanty_capstoneproject.data.model.article.DetailArticle
 import com.example.nusanty_capstoneproject.databinding.ActivityDetailArticleBinding
+import com.example.nusanty_capstoneproject.ui.activity.main.MainActivity
 
 class DetailArticleActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDetailArticleBinding
@@ -26,7 +28,7 @@ class DetailArticleActivity : AppCompatActivity() {
         val detailArticleViewModel =
             ViewModelProvider(this)[DetailArticleViewModel::class.java]
 
-        imageList = ArrayList<String>()
+        imageList = ArrayList()
         imageList = imageList + data.article_imgUrl!!
 
         viewPagerAdapter = ViewPagerAdapter(this,imageList)
@@ -38,6 +40,12 @@ class DetailArticleActivity : AppCompatActivity() {
 
             binding.tvDetailArticle.text = data.article_Description
 
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this@DetailArticleActivity, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     companion object {

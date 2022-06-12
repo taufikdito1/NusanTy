@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.nusanty_capstoneproject.R
 import java.util.*
 
-class ViewPagerAdapter(val context: Context, val imageList: List<String>) : PagerAdapter() {
+class ViewPagerAdapter(val context: Context, private val imageList: List<String>) : PagerAdapter() {
     // on below line we are creating a method
     // as get count to return the size of the list.
     override fun getCount(): Int = imageList.size

@@ -6,17 +6,12 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
-
-@Parcelize
-data class DetailArticle(
-    @field:SerializedName("id")
+@Entity(tableName = "article_adat")
+data class DetailDB(
+    @PrimaryKey
     val id : Long = 0,
-    @field:SerializedName("article_title")
     val article_title : String? = null,
-    @field:SerializedName("article_imgUrl")
-    val article_imgUrl : List<String>? = null,
-    @field:SerializedName("article_Description")
+    val article_imgUrl : String? = null,
     val article_Description: String? = null,
-    @field:SerializedName("article_Location")
     val article_Location : String? = null
-):Parcelable
+)
