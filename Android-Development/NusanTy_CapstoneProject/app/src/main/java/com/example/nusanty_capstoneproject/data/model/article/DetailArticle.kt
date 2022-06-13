@@ -9,14 +9,20 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class DetailArticle(
+
+    @field:SerializedName("photoUrl")
+    val photoUrl: List<String>? = null,
+
+    @field:SerializedName("description")
+    val description: String? = null,
+
+    @field:SerializedName("location")
+    val location: String? = null,
+
     @field:SerializedName("id")
-    val id : Long = 0,
-    @field:SerializedName("article_title")
-    val article_title : String? = null,
-    @field:SerializedName("article_imgUrl")
-    val article_imgUrl : List<String>? = null,
-    @field:SerializedName("article_Description")
-    val article_Description: String? = null,
-    @field:SerializedName("article_Location")
-    val article_Location : String? = null
-):Parcelable
+    val id: String? = null,
+
+    @field:SerializedName("title")
+    val title: String? = null
+
+) :Parcelable

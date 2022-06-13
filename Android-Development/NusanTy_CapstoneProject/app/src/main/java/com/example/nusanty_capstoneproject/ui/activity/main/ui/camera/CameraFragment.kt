@@ -13,24 +13,32 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.nusanty_capstoneproject.R
 import com.example.nusanty_capstoneproject.data.database.ArticleRepository
 import com.example.nusanty_capstoneproject.data.model.article.DetailArticle
+import com.example.nusanty_capstoneproject.data.model.article.DetailResponse
+import com.example.nusanty_capstoneproject.data.networking.ApiConfig
 import com.example.nusanty_capstoneproject.databinding.FragmentCameraBinding
 import com.example.nusanty_capstoneproject.ml.Detect
 import com.example.nusanty_capstoneproject.ui.activity.detail.DetailArticleActivity
-import com.example.nusanty_capstoneproject.ui.activity.main.ui.home.ViewModelFactory
+import com.example.nusanty_capstoneproject.ui.activity.main.ui.home.HomeViewModel
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -42,6 +50,8 @@ class CameraFragment : Fragment() {
     private var getFile: File? = null
     private val binding get() = _binding!!
     private lateinit var tittle: String
+    private lateinit var viewModel: CameraViewModel
+    private lateinit var data : List<DetailArticle>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,8 +61,7 @@ class CameraFragment : Fragment() {
 
         getPermission()
         _binding = FragmentCameraBinding.inflate(inflater, container, false)
-
-        val repo = ArticleRepository(requireActivity().application)
+        getArticle()
         binding.btnGalley.setOnClickListener {
             galleryStart()
         }
@@ -62,54 +71,37 @@ class CameraFragment : Fragment() {
         }
 
         binding.btnScan.setOnClickListener {
-            val model = Detect.newInstance(requireContext())
-            val hasil =  requireActivity().application.assets.open("labels.txt").bufferedReader().use { it.readText() }.split("\n")
+            if(binding.imgScanImage.drawable == null){
+                Toast.makeText(requireContext(), R.string.choose,Toast.LENGTH_SHORT).show()
+            }else {
+                val model = Detect.newInstance(requireContext())
+                var bitmap = binding.imgScanImage.getDrawable().toBitmap()
 
-            var bitmap = binding.imgScanImage.getDrawable().toBitmap()
-            bitmap = Bitmap.createScaledBitmap(bitmap, 320, 320, true)
+                bitmap = Bitmap.createScaledBitmap(bitmap, 320, 320, true)
 
-            val tensorImage = TensorImage(DataType.FLOAT32)
-            tensorImage.load(bitmap)
-            val byteBuffer = tensorImage.buffer
+                val tensorImage = TensorImage(DataType.FLOAT32)
+                tensorImage.load(bitmap)
+                val byteBuffer = tensorImage.buffer
 
-            val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 320, 320, 3), DataType.FLOAT32)
-            inputFeature0.loadBuffer(byteBuffer)
+                val inputFeature0 =
+                    TensorBuffer.createFixedSize(intArrayOf(1, 320, 320, 3), DataType.FLOAT32)
+                inputFeature0.loadBuffer(byteBuffer)
 
-            // Runs model inference and gets result.
-            val outputs = model.process(inputFeature0)
-            val outputFeature0 = outputs.outputFeature0AsTensorBuffer //ini deteksi baris 1
-            val outputFeature1 = outputs.outputFeature1AsTensorBuffer //ini deteksi baris terakhir
-            val outputFeature2 = outputs.outputFeature2AsTensorBuffer //gabisa nyimpulin
-            val outputFeature3 = outputs.outputFeature3AsTensorBuffer //deteksi warna udh jalan
-            val max = getMax(outputFeature3.floatArray)
+                // Runs model inference and gets result.
+                val outputs = model.process(inputFeature0)
+                val outputFeature0 = outputs.outputFeature0AsTensorBuffer //ini deteksi baris 1
+                val outputFeature1 =
+                    outputs.outputFeature1AsTensorBuffer //ini deteksi baris terakhir
+                val outputFeature2 = outputs.outputFeature2AsTensorBuffer //gabisa nyimpulin
+                val outputFeature3 = outputs.outputFeature3AsTensorBuffer //deteksi warna udh jalan
+                val max = getMax(outputFeature3.floatArray)
 
-            when (max) {
-                0 -> {
-                    tittle = "BajuPangsi"
-                }
-                1 -> {
-                    tittle = "BajuSurjan"
-                }
-                2 -> {
-                    tittle = "BajuCak"
-                }
-            }
-
-            repo.getArticleById(tittle).observe(requireActivity()){
-                var image = it.article_imgUrl
-                if (image != null) {
-                    image = image.drop(1)
-                    image = image.dropLast(1)
-                }
-                val listImage = image!!.split(", ").toList()
-                val data = DetailArticle(it.id,it.article_title, listImage,it.article_Description,it.article_Location)
                 val intent = Intent(getActivity(), DetailArticleActivity::class.java)
-                intent.putExtra(DetailArticleActivity.DETAIL_ARTICLE, data)
+                intent.putExtra(DetailArticleActivity.DETAIL_ARTICLE, data[max])
                 startActivity(intent)
+
+                model.close()
             }
-
-
-            model.close()
         }
 
         return binding.root
@@ -118,6 +110,25 @@ class CameraFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun getArticle() {
+        ApiConfig().getApiService().getArticle()
+            .enqueue(object : Callback<DetailResponse> {
+                override fun onResponse(
+                    call: Call<DetailResponse>,
+                    response: Response<DetailResponse>
+                ) {
+                    if (response.isSuccessful) {
+                            data = response.body()!!.articles
+                    }
+                }
+
+                override fun onFailure(call: Call<DetailResponse>, t: Throwable) {
+
+                }
+
+            })
     }
 
     private fun getMax(arr:FloatArray) : Int{
@@ -134,6 +145,11 @@ class CameraFragment : Fragment() {
             }
         }
         return ind
+    }
+
+
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
 

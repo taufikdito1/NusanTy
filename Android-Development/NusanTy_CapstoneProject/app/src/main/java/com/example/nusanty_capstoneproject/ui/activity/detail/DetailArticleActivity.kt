@@ -29,16 +29,16 @@ class DetailArticleActivity : AppCompatActivity() {
             ViewModelProvider(this)[DetailArticleViewModel::class.java]
 
         imageList = ArrayList()
-        imageList = imageList + data.article_imgUrl!!
+        imageList = imageList + data.photoUrl!!
 
         viewPagerAdapter = ViewPagerAdapter(this,imageList)
         viewPager.adapter = viewPagerAdapter
 
-            binding.tvArticleName.text = data.article_title
+            binding.tvArticleName.text = data.title
 
-            binding.tvLocation.text = data.article_Location
+            binding.tvLocation.text = data.location
 
-            binding.tvDetailArticle.text = data.article_Description
+            binding.tvDetailArticle.text = data.description
 
     }
 

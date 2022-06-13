@@ -3,22 +3,29 @@
   "message": "Stories fetched successfully",
   "detailArticle": [{
     "id" : "0",
-    "article_title" : "BajuPangsi",
-    "article_imgUrl" : ["https://images.unsplash.com/photo-1557363763-8381968f8353?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1622277430358-f4d134452e2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=647&q=80","https://images.unsplash.com/photo-1580151134699-e0cfbeb763d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
-    "article_Description" : "Kebaya has become a Southeast Asian fashion icon, with many Southeast Asian flag carrier airlines including Singapore Airlines, Malaysia Airlines, Royal Brunei Airlines and Garuda Indonesia have adopted the traditional clothing as the uniforms for their female flight attendants.",
-    "article_Location" : "Jawa tengah"
+    "article_title" : "Baju Pangsi",
+    "article_imgUrl" : [ "https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/baju-pangsi.jpg",
+      "https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/baju-pangsi2.jpeg",
+      "https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/baju-pangsi3.jpg"],
+    "article_Description" : "Pangsi adalah singkatan dari “Pangeusi numpang ka sisi” yang artinya pakaian penutup badan yang cara pemakaiannya dililitkan secara menumpang seperti memakai sarung. Pangsi adalah salah satu pakaian khas adat Sunda yang diwariskan dari leluhur kita secara turun temurun hingga saat ini. Mungkin Wargi Bandung sering kali melihat pakaian adat pangsi ini dipakai oleh tokoh pemerintah, pegawai negeri sipil bahkan anak-anak sekolah pada hari tertentu. Tujuannya tidak lain adalah untuk melestarikan budaya pakaian adat Sunda tersebut.",
+    "article_Location" : "Jawa Barat"
   },{
     "id" : "1",
     "article_title" : "BajuSurjan",
-    "article_imgUrl" : ["https://images.unsplash.com/photo-1595064585513-7859763664bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80","https://images.unsplash.com/photo-1630929436231-91f4c6fe4884?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1640253295833-fe11b86fd37e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
-    "article_Description" : "In Subsaharan Africa, Javanese batik was introduced in the 19th century by Dutch and English traders. The local people there adapted the Javanese batik, making larger motifs with thicker lines and more colours. In the 1970s, batik was introduced to Australia, where aboriginal artists at Erna Bella have developed it as their own craft.",
+    "article_imgUrl" : [
+      "https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/baju-surjan.png",
+      "https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/baju-surjan2.jpg",
+      "https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/baju-pangsi3.jpg"],
+    "article_Description" : "Surjan adalah busana atas resmi adat Jawa untuk pria. Surjan sendiri berasal dari bahasa Arab yaitu siraajan, yang artinya lampu atau dalam bahasa Jawa artinya pepadhang. Baju lurik atau Surjan dirancang oleh para wali dalam mengembangkan ajaran Islam di pulau jawa.",
     "article_Location" : "Jawa Tengah"
   },{
     "id" : "2",
     "article_title" : "BajuCak",
-    "article_imgUrl" : ["https://images.unsplash.com/photo-1557363763-8381968f8353?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1622277430358-f4d134452e2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=647&q=80","https://images.unsplash.com/photo-1580151134699-e0cfbeb763d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
-    "article_Description" : "Kebaya has become a Southeast Asian fashion icon, with many Southeast Asian flag carrier airlines including Singapore Airlines, Malaysia Airlines, Royal Brunei Airlines and Garuda Indonesia have adopted the traditional clothing as the uniforms for their female flight attendants.",
-    "article_Location" : "Jawa tengah"
+    "article_imgUrl" : [ "https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/baju-cak.png",
+      "https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/baju-cak2.png",
+      "https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/baju-cak3.jpg"],
+    "article_Description" : "Cak merupakan panggilan untuk laki-laki dan Ning merupakan panggilan untuk perempuan. Baju untuk Cak berupa beskap lengan panjang yang dihiasi dengan beberapa aksesoris terutama di depan dada sebelah kanan. Cak mengenakan odheng sebagai penutup kepala.Bagian bawahan ada yang mengenakan celana panjang yang dibungkus kain batik pendek di atas lutut dan ada juga yang mengenakan jarik panjang bermotif batik hingga mata kaki. ",
+    "article_Location" : "Jawa Timur"
   },{
     "id" : "3",
     "article_title" : "Batik",
@@ -27,15 +34,11 @@
     "article_Location" : "Jawa Tengah"
   },{
     "id" : "4",
-    "article_title" : "Pakaian adat Kebaya",
-    "article_imgUrl" : ["https://images.unsplash.com/photo-1557363763-8381968f8353?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1622277430358-f4d134452e2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=647&q=80","https://images.unsplash.com/photo-1580151134699-e0cfbeb763d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
-    "article_Description" : "Kebaya has become a Southeast Asian fashion icon, with many Southeast Asian flag carrier airlines including Singapore Airlines, Malaysia Airlines, Royal Brunei Airlines and Garuda Indonesia have adopted the traditional clothing as the uniforms for their female flight attendants.",
-    "article_Location" : "Jawa tengah"
-  },{
-    "id" : "5",
-    "article_title" : "Batik",
-    "article_imgUrl" : ["https://images.unsplash.com/photo-1595064585513-7859763664bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80","https://images.unsplash.com/photo-1630929436231-91f4c6fe4884?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1640253295833-fe11b86fd37e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
-    "article_Description" : "In Subsaharan Africa, Javanese batik was introduced in the 19th century by Dutch and English traders. The local people there adapted the Javanese batik, making larger motifs with thicker lines and more colours. In the 1970s, batik was introduced to Australia, where aboriginal artists at Erna Bella have developed it as their own craft.",
-    "article_Location" : "Jawa Tengah"
+    "article_title" : "Pakaian Adat Ulee Balang",
+    "article_imgUrl" : ["https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/ulee-balang1.jpg",
+      "https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/ulee-balang2.jpg",
+      "https://storage.googleapis.com/nusanty-bucket/foto_baju_adat/ulee-balang3.jpeg"],
+    "article_Description" : "Nama pakaian adat Aceh adalah Ulee Balang. Seperti pakaian adat pada umumnya, pakaian adat Aceh menunjukkan ke-khasan adat istiadat yang diterapkan di Daerah Istimewa Aceh. Ciri khas khusus yang dimiliki oleh pakaian adat Aceh** ini merupakan salah satu hal penting yang membedakannya dengan pakaian adat lainnya.",
+    "article_Location" : "Aceh"
   }
   ]}

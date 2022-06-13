@@ -1,13 +1,11 @@
 package com.example.nusanty_capstoneproject.data.networking
 
 import com.example.nusanty_capstoneproject.BuildConfig.API_KEY
+import com.example.nusanty_capstoneproject.data.model.article.DetailResponse
 import com.example.nusanty_capstoneproject.data.model.login.LoginResponse
 import com.example.nusanty_capstoneproject.data.model.login.RegisterResponse
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
     @FormUrlEncoded
@@ -26,4 +24,8 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password")password: String
     ): Call<LoginResponse>
+
+    @Headers("api-key: $API_KEY")
+    @GET("article-api/article")
+    fun getArticle() : Call<DetailResponse>
 }

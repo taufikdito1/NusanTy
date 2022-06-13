@@ -4,28 +4,24 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.nusanty_capstoneproject.R
-import com.example.nusanty_capstoneproject.data.database.ArticleRepository
-import com.example.nusanty_capstoneproject.data.database.NusantyDatabase
 import com.example.nusanty_capstoneproject.databinding.ActivityMainBinding
 import com.example.nusanty_capstoneproject.helper.UserPreference
 import com.example.nusanty_capstoneproject.ui.activity.login.LoginActivity
-import com.example.nusanty_capstoneproject.ui.activity.main.ui.home.HomeViewModel
-import com.example.nusanty_capstoneproject.ui.activity.main.ui.home.ViewModelFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var userPref: UserPreference
-
+    private var count = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +35,14 @@ class MainActivity : AppCompatActivity() {
         setupView()
         validate()
 
+    }
+    override fun onBackPressed() {
+
+        Toast.makeText(applicationContext,"Tekan sekali lagi untuk keluar",Toast.LENGTH_SHORT).show()
+        count += 1
+        if (count == 2) {
+            finish()
+        }
     }
 
     private fun setupView(){

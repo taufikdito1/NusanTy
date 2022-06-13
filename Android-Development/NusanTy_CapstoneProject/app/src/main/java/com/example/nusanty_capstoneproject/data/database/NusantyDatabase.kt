@@ -19,7 +19,6 @@ import kotlinx.coroutines.launch
 abstract class NusantyDatabase: RoomDatabase() {
     abstract fun ArticleDao(): ArticleDao
 
-
     companion object{
         @Volatile
         private var INSTANSE: NusantyDatabase? = null
